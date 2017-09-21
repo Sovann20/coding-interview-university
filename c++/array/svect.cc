@@ -133,6 +133,16 @@ void SVect::delete_at(int index){
         
         sz--;
     }
+    
+    if(sz <= capacity/4){
+        if(capacity%2 == 0){
+            resize(capacity/2);
+        }
+        else{
+            resize((capacity/2)+1);
+        }
+    }
+    
 }
 
 void SVect::remove(int ele){

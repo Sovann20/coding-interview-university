@@ -47,10 +47,11 @@ int main(int argc, char *argv[]){
 //    sv.remove(5);
 //    sv.push(7);
     
-    sv.prepend(34);
-    sv.prepend(34);
-    sv.prepend(123123);
+//    sv.prepend(34);
+//    sv.prepend(34);
+//    sv.prepend(123123);
     sv.prepend(5023);
+    sv.remove(3);
     
     int i;
     for(i = 0; i < sv.get_size(); ++i){
