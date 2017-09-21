@@ -19,7 +19,6 @@ int& SVect::operator[](int i){
     return elem[i];
 }
 
-
 int SVect::get_size(){return sz;}
 
 int SVect::get_capacity(){return capacity;}
@@ -44,7 +43,7 @@ void SVect::push(int i){
 
 int SVect::at(int index){
     if(index > capacity){
-    
+        
         std::cout << "This index is out of bounds. Exiting." << std::endl;
         exit(EXIT_FAILURE);
     }
@@ -95,8 +94,70 @@ void SVect::resize(int new_capacity){
 
 void SVect::insert(int index, int ele){
     
+    at(index);
     
+    if(capacity == sz){
+        resize(capacity*2);
+    }
     
+    ++sz;
+    
+    int next_ele = elem[index];
+    int i, curr_ele = ele;
+    
+    for(i = index; i < sz; ++i){
+        elem[i] = curr_ele;
+        curr_ele = next_ele;
+        next_ele = elem[i+1];
+    }
+    
+}
+
+void SVect::delete_at(int index){
+    
+    at(index);
+    
+    //Simply decreasing the size of the array so that the index is no longer reachable.
+    if(index == sz-1){
+        sz--;
+    }
+    else{
+        int i, next_ele, curr_ele = elem[sz-1];
+        
+        for(i = sz-1; i > index; --i){
+            
+            next_ele = elem[i-1];
+            elem[i-1] = curr_ele;
+            curr_ele = next_ele;
+        }
+        
+        sz--;
+    }
+}
+
+void SVect::remove(int ele){
+    int i;
+    for(i = 0; i < sz; ++i){
+        if(ele == elem[i]){
+            delete_at(i);
+            --i;
+        }
+    }
+}
+
+int SVect::find(int ele){
+    int i;
+    for(i = 0; i < sz; ++i){
+        if( ele == elem[i]){
+            return i;
+        }
+    }
+    
+    return -1;
+}
+
+void SVect::prepend(int ele){
+    insert(0, ele);
 }
 
 //Deconstructer

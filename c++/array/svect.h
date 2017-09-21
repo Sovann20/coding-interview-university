@@ -15,9 +15,10 @@ public:
     void push(int);
     int pop();
     void insert(int, int);
-    //void delete(int);
-    //void remove(int);
-    //int find(int);
+    void delete_at(int);
+    void remove(int);
+    int find(int);
+    void prepend(int);
     int at(int);
     
 private:

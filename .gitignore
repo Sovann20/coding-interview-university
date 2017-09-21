@@ -2,6 +2,39 @@
 personal-9894.md
 c++/README.txt
 c++/array/Makefile
+c++/array/output
 c++/array/array_workspace.xcworkspace/contents.xcworkspacedata
 c++/array/array_workspace.xcworkspace/xcuserdata/Sovann.xcuserdatad/UserInterfaceState.xcuserstate
 university_notes.md
+c++/array/main.cc
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
